@@ -30,7 +30,7 @@
 		width: 150px;
 		height: 1000px;
 		background-image:url(https://www.hermanmiller.com/content/dam/cmf/swatches/GVeneer/678-978.jpg);
-		position: absolute;
+		position: fixed;
 		top: 0%;
 		left: 0%;
 		border: 3px;
@@ -41,7 +41,7 @@
 		width: 150px;
 		height: 1000px;
 		background-image:url(https://www.hermanmiller.com/content/dam/cmf/swatches/GVeneer/678-978.jpg);
-		position: absolute;
+		position: fixed;
 		top: 0%;
 		right: 0%;
 		border: 3px;
@@ -69,9 +69,17 @@ body{margin: 0px;
 	color: black;
 	font-size: 50px;
 	line-height: 100px;
-
-
+	display:inline-block;
+ 	width:100%;
+  	height:100%;
+  	width: 305px;
+  	height: 80px;
 }
+
+.link:hover{
+
+ 	color: gray;
+ }
 
 </style>
 </head>
@@ -81,7 +89,7 @@ body{margin: 0px;
 <center>
 <div id="title"> The Snack That Does Not Smile Back
 
-
+<div></div>
 <a href="Journal.html"> 
 	<div class="link">My Journal</div>
 </a>
