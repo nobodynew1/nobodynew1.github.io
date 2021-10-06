@@ -2,7 +2,9 @@
 <html>
 <head>
 	<title></title>
-
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
@@ -46,18 +48,7 @@
 		right: 0%;
 		border: 3px;
 		border-left-style: solid;
-
-
-
-
 }
-		
-
-
-
-	}
-
-
 
 body{margin: 0px;
 
@@ -65,7 +56,7 @@ body{margin: 0px;
 }
 
 .link{
-	font-family: courier;
+	font-family: Courier;
 	font-size: 40px;
   	height: 100%;
  	width: 100% 100px;
@@ -81,6 +72,29 @@ body{margin: 0px;
 
  }
 
+ #Journal{font-family: Roboto;
+	font-size: 30px;
+	height: 38px;
+	width: 150px;
+	display: inline-block;
+	position: absolute;
+	color: black;
+	border: 3px;
+	border-top-style:solid;
+	border-bottom-style: solid;
+	border-color: black;
+	border-left: 0px;
+	right: 1290px;
+	background: rgba(255, 255, 255, 0.5);
+	top: 20%;}
+
+#Journal:hover{
+	background: rgba(255, 255, 255, 0.8);
+	transition: .2s;
+
+
+}
+
 </style>
 </head>
 
@@ -91,10 +105,6 @@ body{margin: 0px;
 
 </div>
 
-<a href="Journal.html"> 
-	<div class="link">My Journal</div>
-</a>
-
 
 
 <div id="image"></div>
@@ -103,7 +113,11 @@ body{margin: 0px;
 <div id="banner_left"></div>
 <div id="banner_right"></div>
 
-
+<center>
+<a href="Journal.html"> 
+<div id="Journal" class="link"> <b>My Journal</b> 
+</div> </a>
+</center>
 
 
 

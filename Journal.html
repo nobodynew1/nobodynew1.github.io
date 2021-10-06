@@ -5,6 +5,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <style type="text/css">
 	
@@ -42,7 +46,7 @@
 	position: absolute;
 	top: 200px;
 	right: 200px;
-	font-family: courier, bold;
+	font-family: 'Courier', sans-serif;
 
 
 
@@ -69,16 +73,27 @@ body{margin: 0px;
  	color: gray;
  }
 
- #snack{
 
- 	font-family: courier;
- 	font-size: 40px;
- 	height: 100%;
- 	width: 100% 100px;
- 	display: inline-block;
+#Snack2{font-family: Roboto;
+	font-size: 40px;
+	height: 100% 10px;
+	width: 150px;
+	display: inline-block;
+	position: absolute;
+	color: black;
+	border: 3px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: black;
+	border-left: 0px;
+	right: 1290px;
+	background: rgba(255, 255, 255, 0.5);
+	top: 20%;}
 
- }
-
+#Snack2:hover{
+	background: rgba(255, 255, 255, 0.8);
+	transition: .2s;
+}
 
 </style>
 </head>
@@ -89,10 +104,6 @@ body{margin: 0px;
 <div id="title"> My Journal Entry
 
 </div>
-
-<a href="index.html"> 
-	<div id="snack" class="link">Snack</div>
-</a>
 
 <div id="image"></div>
 </center>
@@ -112,7 +123,11 @@ body{margin: 0px;
 
 </p>
 
-
+<center>
+<a href="index.html"> 
+<div id="Snack2" class="link"> <b>Home</b> 
+</div> </a>
+</center>
 
 
 </body>
