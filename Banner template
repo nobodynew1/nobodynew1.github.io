@@ -65,35 +65,9 @@ body{margin: 0px;
 
  }
 
- #Journal{font-family: Roboto;
-	font-size: 30px;
-	height: 35px;
-	width: 150px;
-	display: inline-block;
-	position: fixed;
-	color: black;
-	border: 3px;
-	border-top-style:solid;
-	border-bottom-style: solid;
-	border-color: black;
-	border-left: 0px;
-	left: 0px;
-	background: rgba(255, 255, 255, 0.5);
-	top: 20%;
-	transition: .2s;
-
-}
-
-#Journal:hover{
-	background: rgba(255, 255, 255, 0.8);
-	transition: .2s;
-
-
-}
-
 #Snack2{font-family: Roboto;
 	font-size: 30px;
-	height: 38px;
+	height: 36px;
 	width: 150px;
 	display: inline-block;
 	position: fixed;
@@ -115,14 +89,6 @@ body{margin: 0px;
 	transition: .2s;
 }
 
-#Dinosaur{
-	left: 200px;
-	position: absolute;
-	top: 25%;
-	right: 200px;
-	font-family: 'Courier', sans-serif;
-	font-size: 20px;
-}
 </style>
 </head>
 
@@ -132,7 +98,7 @@ body{margin: 0px;
 
 <center>
 
-	<div id="title"> My Projects
+	<div id="title"> Insert Title
 
 </div>
 </center>
@@ -142,7 +108,7 @@ body{margin: 0px;
 
 <center>
 <a href="Journal.html"> 
-<div id="Journal" class="link"> <b>Journal</b> 
+<div id="Journal" class="link"> <b>My Journal</b> 
 </div> </a>
 
 <a href="index.html"> 
@@ -150,7 +116,6 @@ body{margin: 0px;
 </div> </a>
 </center>
 
-<div id="Dinosaur"><a href="Dino.html" class="link">The Dinosaur Project - Not Finished (mayb)</a></div>
 
 
 </body>

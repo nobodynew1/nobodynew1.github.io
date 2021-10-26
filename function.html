@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+	
+	<style type="text/css">
+		
+		.image{
+			width: 150px;
+			height: 200px;
+			background-repeat: no-repeat;
+			background-size: cover;
+			background-image: url(flower.png);
+			display: inline-block;
+
+
+
+		}
+
+
+
+
+
+
+	</style>
+<body>
+<script type="text/javascript">
+	function makeflower () {
+		var flower = document.createElement("div")
+		document.body.appendChild(flower)
+		flower.classList.add("image")
+
+
+
+	}
+
+
+setInterval (makeflower, 1000)
+
+
+
+</script>
+	
+
+</body>
+</html>

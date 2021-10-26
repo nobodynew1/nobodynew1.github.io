@@ -1,19 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+</head>
+<body>
+
 <style type="text/css">
+
+
+#dino{
+	width: 200px;
+	height: 200px;
+	background-image: url(dino.png);
+	bottom: 0px;
+	right: 150px;
+	position: absolute;
+	background-size: cover;
+	z-index: -1;
+
+}
+
 	
+#div{
+	width: 600px;
+	height: 400px;
+	background-image: url(meteor.png);
+	background-image: ;
+	position: absolute;
+	animation-name: now;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	background-repeat: no-repeat;
+	background-size: cover;
 
 
+}
 #title{
 	font-size:70px;
 	font-family: Courier;
@@ -65,9 +91,9 @@ body{margin: 0px;
 
  }
 
- #Journal{font-family: Roboto;
+ #ID1{font-family: Roboto;
 	font-size: 30px;
-	height: 35px;
+	height: 38px;
 	width: 150px;
 	display: inline-block;
 	position: fixed;
@@ -84,16 +110,16 @@ body{margin: 0px;
 
 }
 
-#Journal:hover{
+#ID1:hover{
 	background: rgba(255, 255, 255, 0.8);
 	transition: .2s;
 
 
 }
 
-#Snack2{font-family: Roboto;
+#ID2{font-family: Roboto;
 	font-size: 30px;
-	height: 38px;
+	height: 36px;
 	width: 150px;
 	display: inline-block;
 	position: fixed;
@@ -110,29 +136,73 @@ body{margin: 0px;
 
 }
 
-#Snack2:hover{
+#ID2:hover{
 	background: rgba(255, 255, 255, 0.8);
 	transition: .2s;
 }
-
-#Dinosaur{
-	left: 200px;
-	position: absolute;
-	top: 25%;
-	right: 200px;
-	font-family: 'Courier', sans-serif;
-	font-size: 20px;
+#ID3{font-family: Roboto;
+	font-size: 30px;
+	height: 36px;
+	width: 150px;
+	display: inline-block;
+	position: fixed;
+	color: black;
+	border: 3px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: black;
+	border-left: 0px;
+	left: 0px;
+	background: rgba(255, 255, 255, 0.5);
+	top: 60%;
+	transition: .2s;
 }
+
+#ID3:hover{
+	background: rgba(255, 255, 255, 0.8);
+	transition: .2s;
+}
+@keyframes now{
+	0%{
+		top: 0px;
+		left: 0px;
+
+	}
+
+	50%{
+		top: 530px;
+		left: 800px;
+
+
+	}
+	51%{
+
+		background-image:url(meteor.png);
+	}
+
+
+
+
+
+
+
+
+
+
+}
+
+
 </style>
-</head>
-
-<body>
 
 
+<div id="div">
+</div>
+
+<div id="dino"></div>
 
 <center>
 
-	<div id="title"> My Projects
+	<div id="title"> Dino Project
 
 </div>
 </center>
@@ -141,19 +211,19 @@ body{margin: 0px;
 <div id="banner_right"></div>
 
 <center>
-<a href="Journal.html"> 
-<div id="Journal" class="link"> <b>Journal</b> 
+<a href="index.html"> 
+<div id="ID1" class="link"> <b>Home</b> 
 </div> </a>
 
-<a href="index.html"> 
-<div id="Snack2" class="link"> <b>Home</b> 
+<a href="Journal.html"> 
+<div id="ID2" class="link"> <b>Journal</b> 
+</div> </a>
+
+<a href="Projects.html"> 
+<div id="ID3" class="link"> <b>Projects</b> 
+
 </div> </a>
 </center>
 
-<div id="Dinosaur"><a href="Dino.html" class="link">The Dinosaur Project - Not Finished (mayb)</a></div>
-
-
 </body>
-
-
 </html>
