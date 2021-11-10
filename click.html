@@ -17,6 +17,7 @@
 #title{
 	font-size:70px;
 	font-family: Courier;
+	margin-bottom: 80px;
 }
 
 #banner_left{
@@ -65,9 +66,9 @@ body{margin: 0px;
 
  }
 
- #Journal{font-family: Roboto;
+ #ID1{font-family: Roboto;
 	font-size: 30px;
-	height: 35px;
+	height: 38px;
 	width: 150px;
 	display: inline-block;
 	position: fixed;
@@ -84,16 +85,16 @@ body{margin: 0px;
 
 }
 
-#Journal:hover{
+#ID1:hover{
 	background: rgba(255, 255, 255, 0.8);
 	transition: .2s;
 
 
 }
 
-#Snack2{font-family: Roboto;
+#ID2{font-family: Roboto;
 	font-size: 30px;
-	height: 38px;
+	height: 36px;
 	width: 150px;
 	display: inline-block;
 	position: fixed;
@@ -110,36 +111,77 @@ body{margin: 0px;
 
 }
 
-#Snack2:hover{
+#ID2:hover{
+	background: rgba(255, 255, 255, 0.8);
+	transition: .2s;
+}
+#ID3{font-family: Roboto;
+	font-size: 30px;
+	height: 36px;
+	width: 150px;
+	display: inline-block;
+	position: fixed;
+	color: black;
+	border: 3px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: black;
+	border-left: 0px;
+	left: 0px;
+	background: rgba(255, 255, 255, 0.5);
+	top: 60%;
+	transition: .2s;
+}
+
+#ID3:hover{
 	background: rgba(255, 255, 255, 0.8);
 	transition: .2s;
 }
 
-#Dinosaur{
-	margin-left: 200px;
-	margin-top: 100px;
-	margin-right: 200px;
-	font-family: 'Courier', sans-serif;
-	font-size: 20px;
-}
+	
 
-#Click{
-	margin-left: 200px;
-	margin-top: 20px;
-	margin-right: 200px;
-	font-family: 'Courier', sans-serif;
-	font-size: 20px;
-}
+	.dino{
+		height: 100px;
+		width: 100px;
+		background-image:url(dino.png);
+		display: inline-block;
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: contain;
+
+
+
+
+	}
+	.explosion{
+		height: 100px;
+		width: 100px;
+		background-image:url(explosion3.png);
+		display: inline-block;
+		position: relative;
+		background-repeat: no-repeat;
+		background-size: contain;
+	}
+
+	#container{
+		height:800px;
+		top: 300px;
+		width: 1040px;
+		margin-left:200px;
+		right: 200px;
+	}
+
+
+
 </style>
 </head>
 
+
+
 <body>
-
-
-
 <center>
 
-	<div id="title"> My Projects
+	<div id="title"> Its Simple, Just Click
 
 </div>
 </center>
@@ -148,21 +190,59 @@ body{margin: 0px;
 <div id="banner_right"></div>
 
 <center>
-<a href="Journal.html"> 
-<div id="Journal" class="link"> <b>Journal</b> 
+<a href="index.html"> 
+<div id="ID1" class="link"> <b>Home</b> 
 </div> </a>
 
-<a href="index.html"> 
-<div id="Snack2" class="link"> <b>Home</b> 
+<a href="Journal.html"> 
+<div id="ID2" class="link"> <b>Journal</b> 
+</div> </a>
+
+<a href="Projects.html"> 
+<div id="ID3" class="link"> <b>Projects</b> 
+
 </div> </a>
 </center>
+	<div id="container"></div>
 
-<div id="Dinosaur"><a href="Dino.html" class="link">The Dinosaur Project - Not Finished (mayb)</a></div>
 
-<div id="Click"><a href="Click.html" class="link">The Dinosaur Project: But DIFFERENT - Not Finished (mayb)</a></div>
 
+
+
+
+<script type="text/javascript">
+	var container = document.getElementById('container');
+
+	function makedino() {
+		var square = document.createElement("div")
+		container.appendChild(square)
+
+		square.classList.add('dino')
+
+		square.addEventListener("click", function () {
+
+				square.classList.remove('dino')
+				square.classList.add('explosion')
+		})
+
+
+
+
+
+
+
+	}
+	setInterval (makedino, 300)
+
+
+
+
+
+
+
+
+</script>
 
 </body>
-
-
 </html>
+

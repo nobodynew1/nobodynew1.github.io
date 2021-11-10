@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	
+<style type="text/css">
+	
+	#test1{
+		width: 100%;
+		height: 800px;
+
+
+
+
+	}
+
+
+</style>
+</head>
+<body>
+	<div id="test1" ></div>
+	<script type="text/javascript">
+		var test1 = document.getElementById("test1");
+		
+
+		function randomizer() {
+		var randomNumber1 = Math.round(Math.random()*255)
+		var randomNumber2 = Math.round(Math.random()*255)
+		var randomNumber3 = Math.round(Math.random()*255)
+		console.log(randomNumber1, randomNumber2, randomNumber3)
+
+
+
+			test1.style.backgroundColor = "rgb(" + randomNumber1 + ", " + randomNumber2 + ", " + randomNumber3 + ")";
+
+		
+
+
+
+		}
+
+		setInterval (randomizer, 1000)
+
+
+
+
+	</script>
+
+
+</body>
+</html>
