@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+
+<style type="text/css">
+	
+	#text{
+
+
+		height: 200px;
+		width: 200px;
+		background-size: contain;
+		background-repeat: no-repeat;
+
+
+	}
+</style>
+
+
+<div id="text"></div>
+
+<script type="text/javascript">
+	
+	var number = ["0","1","2","3","4","5"]
+		var	text = document.getElementById("text")
+
+function idk() {
+
+
+	x = Math.round(Math.random()*5);
+	console.log(x)
+	text.innerText = number[x]
+	if (x == 0) {
+		text.style.backgroundImage = "url(dino.png)";
+	}
+	else if (x !== 0) {
+		text.style.backgroundImage = "url(cookie.png)";
+	}
+
+
+
+}
+
+document.addEventListener("keypress", idk)
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
