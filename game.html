@@ -101,6 +101,66 @@
 
 
 	}
+	#present2closed{
+		height: 200px;
+		width: 200px;
+		background-image: url(present1closed.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 3;
+		left: 610px;
+		top: 430px;
+		background-position: center center;
+        filter: drop-shadow(0 0 1px black);
+    }
+    #present2open{
+		height: 180px;
+		width: 180px;
+		background-image: url(present1open.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 3;
+		left: 628px;
+		top: 435px;
+		background-position: center center;
+        filter: drop-shadow(0 0 1px black);
+    }
+	#present1open{
+		height: 180px;
+		width: 180px;
+		background-image: url(present1open.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 3;
+		left: 438px;
+		top: 435px;
+		background-position: center center;
+        filter: drop-shadow(0 0 1px black);
+
+
+
+	}
+	#present1price{
+		height: 50px;
+		width: 50px;
+		font-size: 30px;
+		left: 505px;
+		top: 590px;
+		position: absolute;
+		z-index: 100;
+	}
+	#present2price{
+		height: 50px;
+		width: 50px;
+		font-size: 30px;
+		left: 685px;
+		top: 590px;
+		position: absolute;
+		z-index: 100;
+	}
 </style>
 </head>
 <body>
@@ -110,13 +170,21 @@
 	<audio id="doki" src="doki.mp3" loop="loop"></audio>
 
 
-
-
+<!-- <div id="present1closed"></div>
+ -->
 <script type="text/javascript">
+	var firstpresent = document.createElement("div")
+	var secondpresent = document.createElement("div")
+	var present1bought = 0
+	var present2bought = 0
 	var f = 0
 	var x = 0
 	var bal = document.getElementById("balance");
 	var shopicon = document.getElementById('shopicon')
+	var doki = document.getElementById("doki")
+	function dokimusic () {
+    	doki.play();
+}
 	function makecoin () {
 		var coinwidth = Math.round(Math.random()*1350)
 		var coinheight = Math.round(Math.random()*680)
@@ -136,7 +204,11 @@
 		coin.style.left = coinwidth + "px";
 		
 		coin.addEventListener("click", function () {
-				x = x + 1
+				if (present1bought == 0) {
+					x = x + 2}
+				if (present1bought == 1) {
+					x = x + 5
+				}
 				coin.id = "ded"
 				coin.classList.remove('coin')
 				bal.innerText = "Money: $" + x
@@ -154,16 +226,19 @@
 		var deletion = document.getElementById("back")
 		var storedel = document.getElementById("store")
 		var blackdel = document.getElementById("black")
-		var present1del = document.getElementById("present1closed")
+		var del$50 = document.getElementById("present1price")
+		var del$100 = document.getElementById("present2price")
 		if (f == 1) {
 			deletion.addEventListener("click", function () {
 				momodel.remove()
 				blackdel.remove()
 				storedel.remove()
-				present1del.remove()
 				deletion.remove()
-
-				
+				del$50.remove()
+				del$100.remove()
+				firstpresent.remove()
+				secondpresent.remove()
+				doki.volume = "1";
 				f = 0
 
 
@@ -171,6 +246,8 @@
 
 			
 		})}
+
+			
 
 
 
@@ -190,19 +267,31 @@
 				var arrow = document.createElement("div")
 				document.body.appendChild(arrow)
 				arrow.id = "back"
-				var firstpresentclosed = document.createElement("div")
-				document.body.appendChild(firstpresentclosed)
-				firstpresentclosed.id = "present1closed"
+				document.body.appendChild(firstpresent)
+				document.body.appendChild(secondpresent)
+				var present50 = document.createElement("div")
+				document.body.appendChild(present50)
+				present50.id = "present1price"
+				present50.innerText = "$50"
+				var present100 = document.createElement("div")
+				document.body.appendChild(present100)
+				present100.id = "present2price"
+				present100.innerText = "$100"
+				if (present1bought == 0) {firstpresent.id = "present1closed"
+			}
+				else if (present1bought == 1) {firstpresent.id = "present1open"
+			}
+				if (present2bought == 0) {secondpresent.id = "present2closed"
+			}
+				else if (present2bought == 1) {secondpresent.id = "present2open"
+			}
+				doki.volume = "0.4";
 
 				f = 1
 
 
 			}
-				else if (f == 1){
 
-
-
-				}
 
 
 
@@ -219,18 +308,55 @@
 		}
 
 
-	function dokimusic () {
-    	document.getElementById("doki").play();
-}
+	
 	function coindel () {
 		if (document.getElementById("ded")){	
 		document.getElementById("ded").remove()}
 	
 	}
+		
+
+
+	function present1open () {
+		if (x >= 50) {
+			if (f == 1) {firstpresent.addEventListener("click", function () {
+			if (present1bought == 0){
+			x = x - 50
+			bal.innerText = "Money: $" + x
+			present1bought = 1
+			firstpresent.id = "present1open"
+			console.log(x)
+
+
+
+
+			
+		}})}}}
+
+	function present2open () {
+		if (x >= 100) {
+			if (f == 1) {secondpresent.addEventListener("click", function () {
+			console.log(x)
+
+
+
+
+			
+		})}}}
+
+	
+			
+
+
+
+
+			
+
 
 
 document.addEventListener("click", dokimusic)
 document.addEventListener("keypress", dokimusic)
+document.addEventListener("click", present1open)
 
 setInterval (makecoin, 500)
 </script>
