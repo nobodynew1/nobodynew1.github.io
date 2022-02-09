@@ -65,6 +65,17 @@
 		left: 44%;
 		top: 35%;
 	}
+	#Kyubey{
+		width: 200px;
+		height: 200px;
+		background-image: url(Kyubey.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 1;
+		left: 41%;
+		top: 35%;
+	}
 	#black{
 		width: 100%;
 		height: 10000px;
@@ -173,6 +184,8 @@
 <!-- <div id="present1closed"></div>
  -->
 <script type="text/javascript">
+	var buyplace = document.createElement("div")
+	var momo = document.createElement("div")
 	var firstpresent = document.createElement("div")
 	var secondpresent = document.createElement("div")
 	var present1bought = 0
@@ -194,7 +207,7 @@
 		
 		var ding = document.createElement('audio');
 		ding.src = "ding2.mp3";
-		ding.volume = "0.025";
+		ding.volume = "0.019";
 		coin.appendChild(ding);
 		
 
@@ -207,8 +220,11 @@
 				if (present1bought == 0) {
 					x = x + 2}
 				if (present1bought == 1) {
-					x = x + 5
-				}
+					if (present2bought == 0){
+					x = x + 5}
+					else if (present2bought == 1){
+					x = x + 10
+					}}
 				coin.id = "ded"
 				coin.classList.remove('coin')
 				bal.innerText = "Money: $" + x
@@ -255,10 +271,8 @@
 
 		shopicon.addEventListener("click", function () {
 				if (f == 0) {
-				var buyplace = document.createElement("div")
 				document.body.appendChild(buyplace)
 				buyplace.id = "store"
-				var momo = document.createElement("div")
 				document.body.appendChild(momo)
 				momo.id = "momokuma"
 				var dark = document.createElement("div")
@@ -332,20 +346,32 @@
 
 			
 		}})}}}
-
-	function present2open () {
+	
+	secondpresent.addEventListener("click", function () {
 		if (x >= 100) {
 			if (f == 1) {secondpresent.addEventListener("click", function () {
-			console.log(x)
+			if (present2bought == 0){
+			x = x - 100
+			bal.innerText = "Money: $" + x
+			present2bought = 1
+			secondpresent.id = "present2open"
 
 
 
 
 			
-		})}}}
+		}})}}})
+		
 
 	
-			
+buyplace.addEventListener("click", function(){
+	if (momo.id == "momokuma"){
+		momo.id = "Kyubey"
+	}
+	else if (momo.id == "Kyubey"){
+		momo.id = "momokuma"
+	}
+})
 
 
 
