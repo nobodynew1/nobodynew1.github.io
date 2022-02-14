@@ -125,6 +125,19 @@
 		background-position: center center;
         filter: drop-shadow(0 0 1px black);
     }
+    #present3closed{
+		height: 200px;
+		width: 200px;
+		background-image: url(present1closed.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 3;
+		left: 790px;
+		top: 430px;
+		background-position: center center;
+        filter: drop-shadow(0 0 1px black);
+    }
     #present2open{
 		height: 180px;
 		width: 180px;
@@ -154,6 +167,22 @@
 
 
 	}
+	#present3open{
+		height: 180px;
+		width: 180px;
+		background-image: url(present1open.png);
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		z-index: 3;
+		left: 808px;
+		top: 435px;
+		background-position: center center;
+        filter: drop-shadow(0 0 1px black);
+
+
+
+	}
 	#present1price{
 		height: 50px;
 		width: 50px;
@@ -172,6 +201,15 @@
 		position: absolute;
 		z-index: 100;
 	}
+	#present3price{
+		height: 50px;
+		width: 50px;
+		font-size: 30px;
+		left: 865px;
+		top: 590px;
+		position: absolute;
+		z-index: 100;
+	}
 </style>
 </head>
 <body>
@@ -184,12 +222,15 @@
 <!-- <div id="present1closed"></div>
  -->
 <script type="text/javascript">
+	var shopkeep = 0
 	var buyplace = document.createElement("div")
 	var momo = document.createElement("div")
 	var firstpresent = document.createElement("div")
 	var secondpresent = document.createElement("div")
+	var thirdpresent = document.createElement("div")
 	var present1bought = 0
 	var present2bought = 0
+	var present3bought = 0
 	var f = 0
 	var x = 0
 	var bal = document.getElementById("balance");
@@ -223,8 +264,15 @@
 					if (present2bought == 0){
 					x = x + 5}
 					else if (present2bought == 1){
+					if (present3bought == 0){
 					x = x + 10
-					}}
+					}
+					else if (present3bought == 1){
+					x = x + 20
+					}
+
+
+				}}
 				coin.id = "ded"
 				coin.classList.remove('coin')
 				bal.innerText = "Money: $" + x
@@ -238,22 +286,24 @@
 
 		})
 
-		var momodel = document.getElementById("momokuma")
 		var deletion = document.getElementById("back")
 		var storedel = document.getElementById("store")
 		var blackdel = document.getElementById("black")
 		var del$50 = document.getElementById("present1price")
 		var del$100 = document.getElementById("present2price")
+		var del$400 = document.getElementById("present3price")
 		if (f == 1) {
 			deletion.addEventListener("click", function () {
-				momodel.remove()
+				momo.remove()
 				blackdel.remove()
 				storedel.remove()
 				deletion.remove()
 				del$50.remove()
 				del$100.remove()
+				del$400.remove()
 				firstpresent.remove()
 				secondpresent.remove()
+				thirdpresent.remove()
 				doki.volume = "1";
 				f = 0
 
@@ -274,7 +324,6 @@
 				document.body.appendChild(buyplace)
 				buyplace.id = "store"
 				document.body.appendChild(momo)
-				momo.id = "momokuma"
 				var dark = document.createElement("div")
 				document.body.appendChild(dark)
 				dark.id = "black"
@@ -283,6 +332,7 @@
 				arrow.id = "back"
 				document.body.appendChild(firstpresent)
 				document.body.appendChild(secondpresent)
+				document.body.appendChild(thirdpresent)
 				var present50 = document.createElement("div")
 				document.body.appendChild(present50)
 				present50.id = "present1price"
@@ -291,6 +341,14 @@
 				document.body.appendChild(present100)
 				present100.id = "present2price"
 				present100.innerText = "$100"
+				var present400 = document.createElement("div")
+				document.body.appendChild(present400)
+				present400.id = "present3price"
+				present400.innerText = "$400"
+				if (shopkeep == 0) {momo.id = "momokuma"
+			}
+				else if (shopkeep == 1) {momo.id = "Kyubey"
+			}
 				if (present1bought == 0) {firstpresent.id = "present1closed"
 			}
 				else if (present1bought == 1) {firstpresent.id = "present1open"
@@ -298,6 +356,10 @@
 				if (present2bought == 0) {secondpresent.id = "present2closed"
 			}
 				else if (present2bought == 1) {secondpresent.id = "present2open"
+			}
+				if (present3bought == 0) {thirdpresent.id = "present3closed"
+			}
+				else if (present3bought == 1) {thirdpresent.id = "present3open"
 			}
 				doki.volume = "0.4";
 
@@ -361,15 +423,32 @@
 
 			
 		}})}}})
+
+	thirdpresent.addEventListener("click", function () {
+		if (x >= 400) {
+			if (f == 1) {thirdpresent.addEventListener("click", function () {
+			if (present3bought == 0){
+			x = x - 400
+			bal.innerText = "Money: $" + x
+			present3bought = 1
+			thirdpresent.id = "present3open"
+
+
+
+
+			
+		}})}}})
 		
 
 	
 buyplace.addEventListener("click", function(){
 	if (momo.id == "momokuma"){
 		momo.id = "Kyubey"
+		shopkeep = 1
 	}
 	else if (momo.id == "Kyubey"){
 		momo.id = "momokuma"
+		shopkeep = 0
 	}
 })
 
