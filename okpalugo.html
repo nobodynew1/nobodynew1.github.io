@@ -76,6 +76,17 @@
 		
 
 		}
+		#fmeme{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image:url(fmeme.png);
+			width: 340px;
+			height: 191px;
+			right: 60px;
+			top: 440px;
+			position: absolute;
+
+		}
 		#text{
 			position:absolute;
 			color:black;
@@ -174,9 +185,13 @@
 			text4.innerText = "Nonetheless, thank you for being such a kind, understanding, and amazing teacher, and one last time I apologize for the burden I've placed on you in these past couple of months.";
 			text4.id = "text4"
 			}
+		if (x==5) {
+			var fmeme = document.createElement("div")
+			document.body.appendChild(fmeme)
+			fmeme.id = "fmeme"
 
 
-	})
+	}})
 
 
 
