@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+
+<style type="text/css">
+	
+	.size1{
+		width: 100px;
+		height: 100px;
+		top: 20px;
+		position: absolute;
+		transition: .4s;
+	}
+	.hover:hover{
+		color: gray;
+		transition: .4s;
+
+	}
+	.hover:hover{
+		color: gray;
+		transition: .4s;
+
+
+	}
+	.hover:hover{
+		color: gray;
+		transition: .4s;
+
+	}
+	#red{
+		background-color: red;
+		left: 400px;
+		font: fantasy;
+		color: white;
+	}
+	#blue{
+		background-color: blue;
+		left: 510px;
+		font: oblique;
+	}
+	#purple{
+		background-color: purple;
+		left: 620px;
+		font: lighter;
+		color: lightblue;
+	}
+</style>
+<body>
+<div class="size1" id="blue"><a href="https://www.youtube.com/" class="hover">red</a></div>
+<div class="size1" id="red"><a class="hover"> purple</a></div>
+<div class="size1" id="purple"><a class="hover">blue</a></div>
+</body>
+
+<script type="text/javascript">
+	
+var x = document.getElementById("red")
+var y = document.getElementById("blue")
+var color = 0
+
+x.addEventListener("click", function(){
+	x.remove()
+
+})
+y.addEventListener("click", function(){
+	if (color == 0){
+		y.style.backgroundColor = "yellow"
+		color = 1
+	}
+	else if (color == 1){
+		y.style.backgroundColor = "purple"
+		color = 0
+	}
+
+})
+</script>
+</html>

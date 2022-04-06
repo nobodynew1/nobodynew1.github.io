@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+
+	<style type="text/css">
+		body{
+			background-color: lightblue;
+			margin: 0px;
+
+		}
+		#button{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image:url(gojo.png);
+			width: 300px;
+			height: 300px;
+			top: 440px;
+			position: relative;
+			z-index: 1;
+
+		}
+
+		#sorry{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image:url(itadori.png);
+			width: 320px;
+			height: 180px;
+			left: 60px;
+			top: 30px;
+			position: absolute;
+		
+
+		}
+
+		#sorry2{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image:url(tanjiro.png);
+			width: 300px;
+			height: 225px;
+			right: 60px;
+			top: 30px;
+			position: absolute;
+
+
+		}
+
+		#Lookingforward{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image:url(afro.png);
+			width: 320px;
+			height: 240px;
+			left: 560px;
+			top: 30px;
+			position: absolute;
+		}
+
+		#Thankyou{
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-image:url(fma.png);
+			width: 320px;
+			height: 200px;
+			left: 60px;
+			top: 440px;
+			position: absolute;
+		
+
+		}
+		#text{
+			position:absolute;
+			color:black;
+			text-align:center;
+			width: 320px;
+			left: 60px;
+			top: 210px;
+			size: 40px;
+			font-size: 20px;
+		}
+
+		#text2{
+			position:absolute;
+			color:black;
+			text-align:center;
+			width: 300px;
+			right: 60px;
+			top: 255px;
+			size: 40px;
+			font-size: 20px;
+		}
+		#text3{
+			position:absolute;
+			color:black;
+			text-align:center;
+			width: 320px;
+			left: 560px;
+			top: 270px;
+			size: 40px;
+			font-size: 20px;
+
+		}
+		#text4{
+			position:absolute;
+			color:black;
+			text-align:center;
+			width: 320px;
+			left: 60px;
+			top: 640px;
+			size: 40px;
+			font-size: 20px;
+		}
+
+
+	</style>
+</head>
+<body>
+<center><div id="button"></div></center>
+
+
+<script type="text/javascript">
+	var gojo = document.getElementById("button");
+	var x = 0
+
+	gojo.addEventListener("click", function () {
+		x = x + 1
+		console.log(x)
+
+		if (x==1) {
+			var itadori = document.createElement("div")
+			var text1 = document.createElement("div");
+			document.body.appendChild(itadori)
+			itadori.id = "sorry"
+			document.body.appendChild(text1)
+			text1.innerText = "I'm sorry for being an inattentive and non-studious student.";
+			text1.id = "text"
+	
+			}
+
+		if (x==2) {
+			var tanjiro = document.createElement("div")
+			var text2 = document.createElement("div")
+			document.body.appendChild(tanjiro)
+			tanjiro.id = "sorry2"
+			document.body.appendChild(text2)
+			text2.innerText = "I apologize for not demonstrating the respect you deserve in class.";
+			text2.id = "text2"
+			}
+
+		if (x==3) {
+			var afro = document.createElement("div")
+			var text3 = document.createElement("div")
+			document.body.appendChild(afro)
+			afro.id = "Lookingforward"
+			document.body.appendChild(text3)
+			text3.innerText = "While the time I have remaining in this class is short, I will work to become a student you deserve to not only teach, but advise in house as well.";
+			text3.id = "text3"
+			}
+
+		if (x==4) {
+			var fma = document.createElement("div")
+			var text4 = document.createElement("div")
+			document.body.appendChild(fma)
+			fma.id = "Thankyou"
+			document.body.appendChild(text4)
+			text4.innerText = "Nonetheless, thank you for being such a kind, understanding, and amazing teacher, and one last time I apologize for the burden I've placed on you in these past couple of months.";
+			text4.id = "text4"
+			}
+
+
+	})
+
+
+
+
+
+</script>
+</body>
+</html>
