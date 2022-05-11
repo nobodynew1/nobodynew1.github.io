@@ -258,21 +258,20 @@
 		coin.style.left = coinwidth + "px";
 		
 		coin.addEventListener("click", function () {
-				if (present1bought == 0) {
-					x = x + 2}
-				if (present1bought == 1) {
+				if (present1bought == 0){
 					if (present2bought == 0){
-					x = x + 5}
-					else if (present2bought == 1){
 					if (present3bought == 0){
-					x = x + 10
-					}
-					else if (present3bought == 1){
-					x = x + 20
-					}
-
-
-				}}
+					x = x + 2}}}
+				if (present1bought == 1){
+					if (present2bought !== 1){
+					if (present3bought !== 1){
+					x = x + 5}}}
+				if (present2bought == 1){
+					if (present3bought !== 1){
+					x = x + 10}}
+				if (present3bought == 1){
+					x = x + 20}
+				
 				coin.id = "ded"
 				coin.classList.remove('coin')
 				bal.innerText = "Money: $" + x
